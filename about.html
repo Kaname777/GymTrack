@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymTrack - Workouts</title>
+
+    <!--Link Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!--Link my Custom CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">GymTrack</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="workouts.html">Workouts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="challenges.html">Challenges</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <!--Dark Mode Toggle Button-->
+                    <li class="nav-item">
+                      <button id="dark-mode-toggle" class="btn btn-outline-light">Dark Mode</button>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--About GymTrack Section-->
+    <div class="container mt-5">
+        <h2 class="text-center">About GymTrack</h2>
+        <p class="text-center">GymTrack is a fitness and workout tracking platform designed to help users log their workouts, track progress, and stay motivated. Our goal is to make fitness tracking easy and accessible for everyone.</p>
+    </div>
+
+    <!--Team Section (Grid Layout)-->
+    <div class="container mt-4">
+        <h3 class="text-center">Meet the Team</h3>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="assets/images/team1.jpg" class="team-member-img" width="150" alt="Team Member 1">
+                <h5>John Doe</h5>
+                <p>Founder & Coach</p>
+            </div>
+            <div class="col-md-4">
+                <img src="assets/images/team2.jpg" class="team-member-img" width="150" alt="Team Member 2">
+                <h5>Jane Smith</h5>
+                <p>Nutritionist</p>
+            </div>
+            <div class="col-md-4">
+                <img src="assets/images/team3.jpg" class="team-member-img" width="150" alt="Team Member 3">
+                <h5>Alex Brown</h5>
+                <p>Developer</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Testimonial Carousel-->
+    <div class="container mt-5">
+        <h3 class="text-center">What Our Users Say</h3>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <p class="text-center">"GymTrack helped me stay on top of my fitness goals!" - Sarah</p>
+                </div>
+                <div class="carousel-item">
+                    <p class="text-center">"I love tracking my workouts with GymTrack. It's so easy!" - Mark</p>
+                </div>
+                <div class="carousel-item">
+                    <p class="text-center">"Great app for both beginners and experienced lifters!" - Emma</p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <!--JavaScript Libraries-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

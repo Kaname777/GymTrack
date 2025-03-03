@@ -1,57 +1,41 @@
-// JavaScript code​​​​​​‌​‌​​‌​‌‌​​​‌​‌​‌‌‌​‌‌‌‌​ below
-// Write your answer here, then test your code.
+$(document).ready(function() {
 
-//Dont change that bit
-const showExpectedResult = false;
-const showHints = false;
+    //Dark Mode Toggle
+    $("#dark-mode-toggle").click(function() {
+        $("body").toggleClass("bg-dark text-white");
+        $(".navbar").toggleClass("bg-dark navbar-light navbar-dark");
+        $("header").toggleClass("bg-primary bg-dark");
+        $("section").toggleClass("bg-light bg-dark text-white");
 
-const taxGST = 5;
-const taxPST = 8;
+        //Fix navbar text colors in dark mode
+        $(".navbar-nav .nav-link, .navbar-brand").toggleClass("text-light");
 
-//
-const array_sum = function (accumulator, current_value){
-    return accumulator + current_value;
-}
+        // Carousel text stays black
+        $(".carousel-item p").toggleClass("text-dark");
 
-const calculateTotal = (prices) => {
-    const totals = {};
-    // Add together all values from the prices array
-    totals.beforeTax = prices.reduce(array_sum);
-    console.log(totals.beforeTax);
+        // Carousel arrows stay black
+        $(".carousel-control-prev-icon, .carousel-control-next-icon").toggleClass("black-arrows");
 
-    // Your code starts here
-    totals.GST = totals.beforeTax * (taxGST / 100)
-    totals.PST = totals.beforeTax * (taxPST / 100)
-    totals.sum = totals.beforeTax + totals.GST + totals.PST
-    // Your code ends here
-    
-    return totals;
-}
+        //Store user preference in localStorage
+        if ($("body").hasClass("bg-dark")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
 
-const showTotals = (prices) => {
-    const totals = calculateTotal(prices);
-    return `
-        Before tax: $${totals.beforeTax.toFixed(2)}
-        GST: $${totals.GST.toFixed(2)}
-        PST: $${totals.PST.toFixed(2)}
-        -----------------\n
-        Sum total: $${totals.sum.toFixed(2)}
-    `
-}
+    //Load Dark Mode Preference (Keeps the mode after refresh)
+    if (localStorage.getItem("darkMode") === "enabled") {
+        $("body").addClass("bg-dark text-white");
+        $(".navbar").addClass("bg-dark navbar-light navbar-dark");
+        $("header").addClass("bg-dark");
+        $("section").addClass("bg-dark text-white");
+        $(".navbar-nav .nav-link").addClass("text-light"); // Ensure links turn white
 
+        // Carousel text stays black
+        $(".carousel-item p").addClass("text-dark");
 
-// This is how your code will be called in a simple manner
-showTotals([5, 10, 5]) 
-
-//You can also use the followin to randomy select from some values in an array. 
-// Your answer should be the largest value in the numbers array.
-// You can edit this code to try different testing cases.
-// Nested array of random prices
-const pricesArr = [  [2.5, 9.99, 3.99, 18.59, 49.96],  [2.99, 3.99, 4.99, 5.99, 6.99]];
-
-// Pick random array of prices
-//const randomPrices = Math.floor(Math.random() * pricesArr.length);
-
-const result = showTotals(pricesArr[randomPrices]);
-console.log(result);
-document.body.innerHTML = result
+        // Carousel arrows stay black
+        $(".carousel-control-prev-icon, .carousel-control-next-icon").addClass("dark-mode-arrows");
+    }
+});

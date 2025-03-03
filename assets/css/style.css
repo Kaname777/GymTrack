@@ -1,0 +1,91 @@
+/* Fixes content from being lost behind the fixed navbar */
+body {
+    padding-top: 56px;
+}
+
+/* Better visual for header */
+header {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Styles for the Latest Activity Section */
+#latest-activity {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Style for completed workouts */
+.table-success td {
+    text-decoration: line-through;
+}
+
+/* Filter and Sort Section */
+#filter-exercise, #sort-workouts {
+    min-width: 100%;
+}
+
+/* Center Carousel Text */
+.carousel-item p {
+    font-size: 1.2rem;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+/* Carousel Text Black */
+.carousel-item p {
+    font-size: 1.2rem;
+    padding: 20px;
+    color: black !important;
+}
+
+/* Keeps Carousel Background White */
+.carousel-light-bg {
+    background: white !important;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* Force Carousel Arrows Black */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Ensures arrows stay black */
+    border-radius: 50%; /* Optional: Makes them look smoother */
+    width: 40px; /* Adjust size if needed */
+    height: 40px;
+}
+
+/* Company Member Images Have the Same Size */
+.team-member-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; 
+    border-radius: 50%; /* Keeps the images circular */
+    margin-bottom: 10px;
+}
+
+/* Contact Form Styling */
+#contact-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Google Maps Styling */
+iframe {
+    border-radius: 10px;
+}
+
+/* Challenge Cards */
+.card {
+    border-radius: 10px;
+    transition: 0.3s;
+    text-align: center;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    width: 100%;
+}
